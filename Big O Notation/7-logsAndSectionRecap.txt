@@ -1,0 +1,44 @@
+Big O Notation - Logs and Section Recap
+----------------------------------------
+
+Logarithms
+    - We've encountered some of the most common complexities: O(1), O(n), O(n^2)
+    - Sometimes big O expressions involve more complex mathematical expressions
+    - One that appears more often than you might like is the logarithm
+
+What is a logarithm?
+    - When talking about logs in respect to Big 0 we consider log === log base 2
+    - The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Example:
+8
+8 / 2 = 4, 4 / 2 = 2, 2 / 2 = 1
+so log(8) = 3;
+
+25
+25 / 2 = 12.5, 12.5 / 2 = 6.25, 6.25 / 2 = 3.125, 3.125 / 2 = 1.5625, 1.5624 / 2 = 0.78125
+so log(25) = 4.64;
+
+----------------------------------------------------------------------------------------------
+
+Logarithm Complexity
+    - Log time complexity is great!
+    - O(n) > O(log n) > O(n) > O(nlog n) > O(n^2)
+
+-------------------------------------------------------
+
+Who Cares? 
+    - Certain searching algorithms have logarithmic time complexity
+    - Efficient sorting algorithms involve logarithms
+    - Recursion sometimes involves logarithmic space complexity
+
+-----------------------------------------------------------------------
+
+Recap
+    - To analyze the performance of an algorithm, we use Big O Notation
+    - Big O notation can give us a high level understanding of the time of space complexity of an algorithm
+    - Big O notataion doesn't care about precision, only about general trends (linear? quadratic? Constant?)
+    - The time or space complexity (as measured by Big O) depends only on the algorithm, not the hardware used to run the algorithm
+    - Big O Notation is everywhere, so get lots of practice!

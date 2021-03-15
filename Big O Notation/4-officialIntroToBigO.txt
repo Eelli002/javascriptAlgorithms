@@ -1,0 +1,68 @@
+Big O Notation - Official Intro to Big O
+-----------------------------------------------
+
+Introducing Big O
+    - Big O Notation is a way to formalize fuzzy counting
+    - It allows us to talk formally about how the runtime of an algorithm grows as the inputs grow
+    - We won't care about the detail, only the trends
+
+-----------------------------------------------------------------------------------------------------
+
+Big O Definition
+    - We say that an algorithm is O(f(n)) if the number of simple operations the computer has to do is eventually less than a constant times f(n), as n increases.
+
+    We can discuss the relationship of the input (f(n)) to the run-time (n)
+        - f(n) could be linear (f(n) = n)
+        - f(n) could be quadradic (f(n) = n^2)
+        - f(n) could be constant (f(n) = 1)
+        - f(n) could be something entirely different!
+
+When talking about Big O, we are discussing the worst case scenario. The upper bound for run time.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Example:
+function addUpTo(n) {
+    return n * (n + 1) / 2;
+}
+Since there are always 3 operations we say that O(1) because as n grows, there is no reflection in the run-time.
+
+function addUpTo(n) {
+    let total = 0;
+    for (let i = 0; i <= n; i++) {
+        total += i;
+    }
+    return total;
+};
+Number of operations is (eventually) bounded by a multiple of n (say, 10n). Then O(n).
+
+---------------------------------------------------------------------------------------------------------------------
+
+Example 2:
+
+function printAllPairs(n) {
+    for (let 1 = 0; i < n; i++) {
+        for (let j = 0; j < n; j++){
+            console.log(i, j);
+        }
+    }
+}
+
+    for (let 1 = 0; i < n; i++) {
+        for (let j = 0; j < n; j++){
+            console.log(i, j);
+        }
+    }
+this part of the program is = O(n) but there is another nested loop:
+
+    for (let j = 0; j < n; j++){
+        console.log(i, j);
+    }
+This is also equal to O(n);
+
+Because there are two seperate parts we get O(n * n) which equals to O(n^2).
+
+---------------------------------------------------------------------------------
+
+As an input of n grows, how does it effect the run-time?
+This is big O, we can see this when plotting time and the value of n.

@@ -1,0 +1,46 @@
+Big O Notation - Space Complexity
+-----------------------------------
+
+We have been talking about time and how different algorithms are affected by time. We will now talk about space complexity, or how much memory an algorithm uses.
+
+What about the inputs?
+    - Sometimes you'll hear the term auxillary space complexity to refer to space requred by the algorithm, not including space taken up by the inputs.
+    - Unless otherwise noted, when we talk about space compexity, technically we'll be talking about auxilary space complexity.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Space Complexity in JS - rules of thumb
+    - Most primatives (booleans, number, undefined, null) are constant space
+    - Strings require O(n) space (where n is the string length)
+    - Reference types are generally O(n), where n is the length (for arrays) or the number of keys (for objects).
+
+---------------------------------------------------------------------------------------------------------------------
+
+Example:
+
+function sum(arr) {
+    let total = 0;
+    for (let i = 0; i < arr.length; i++) {
+        total += arr[i]
+    }
+    return total;
+}
+No matter what arr.length is we have:
+    one variable (total = 0)
+    a second declaration in (let i = 0)
+and that it is for space. No matter what the size of n (arr) is, as it grows it the amount of space is not impacted.
+This means that we have constant space or O(1) space. It is always the same no matter the size of the input.
+
+Example 2:
+
+function double(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(2 * arr[i]);
+    }
+    return newArr;
+}
+As the arr length grows and approaches infinity, newArr gets longer and longer directly in proportion with the length of the input because of (newArr.push(2 * arr[i]))
+If arr is 10 then we are storing 10 items in newArr, if arr is 50 we are storing 50 items in newArr.
+
+So we can simplify this down to O(n)
