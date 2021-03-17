@@ -1,0 +1,32 @@
+Objects - Unordered, key value pairs.
+
+When to use objects:
+    - When you don't need order
+    - When you need fast access / insertion and removal
+
+Big O of Objects:
+    - Insertion: O(1)
+    - Removal: O(1)
+    - Searching: O(n)
+    - Access: O(1)
+When you don't need any ordering, objects are an excellent choice!
+
+let instructor = {
+    firstName: "Kelly",
+    isInstructor: true,
+    favoriteNumbers: [1, 2, 3, 4]
+}
+there is no order to objects, so you cannot add or remove from the beginning or end so it does not matter where you insert. You use a key.
+
+When we search it is in, it is looking for the value in a key
+
+Big O Object Methods:
+    - Object.keys: O(n)
+    - Object.values: O(n)
+    - Object.entries: O(n)
+    - hasOwnProperty: O(1)
+
+    Object.keys(instructor) === ['firstName', 'isInstructor', 'favoriteNumbers']
+    Object.entries(instructor) === ['firstName', 'Kelly'] ['isInstructor', true] ['favoriteNumbers', Array(4)]
+    Object.hasOwnProperty('firstName') === true
+    

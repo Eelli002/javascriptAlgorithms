@@ -1,0 +1,15 @@
+Arrays - Ordered Lists
+
+When to use arrays:
+    - When you need order
+    - When you need fast accss / insertion and removal (sort of...)
+
+Big O of Arrays:
+    - Insertion: It depends...
+        -- if you were to .push() something into an array it is constant time, the problem comes when you insert in the begining of an array as it has to reindex everything in the array. This is O(n) time.
+    - Removal: It depends...
+        -- The same happens when you remove from an array as it also has to reindex everything.
+    - Searching: O(n)
+        -- If the array is in no specific order and we want to find a specific element, JS has to search through the array.
+    - Access: O(1)
+        -- Example: let names = ['Michael', 'Melissa', 'Andrea'] If you were to ask for index [2] You would automatically get Andrea. JS does not loop through the array to find your item if you have the index number. No matter how long the array is, so it is constant time.
