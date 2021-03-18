@@ -1,0 +1,9 @@
+Solve or Simplify
+
+Simplify
+    - Find the core difficulty in what you're trying to do.
+    - Temporarily ignore that difficulty
+    - Write a simplified solution
+    - Then incorporate that difficulty back in
+
+Example: Write a fuction which takes in a string and returns counts of each character in the string.
