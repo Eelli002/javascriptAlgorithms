@@ -51,3 +51,18 @@ function same(arr1, arr2) {
 }
 
 // Even though it still uses loops, since they are not nested the result is O(n)
+
+let same = (arr1, arr2) => {
+    let arrSquared = [];
+
+    for (let i = 0; i < arr1.length; i++) {
+        arrSquared.push(arr1[i] ** 2)
+    }
+
+    let sortedArray = arrSquared.sort();
+    let sortedSecondArray = arr2.sort();
+
+    if (sortedArray === sortedSecondArray) {
+        return true
+    } else return false
+}
