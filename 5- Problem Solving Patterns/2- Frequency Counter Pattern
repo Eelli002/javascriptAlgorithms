@@ -66,3 +66,5 @@ let same = (arr1, arr2) => {
         return true
     } else return false
 }
+
+Instead of comparing two arrays by running nested loops, we can sort each array out by counting their contents in an object. We can then loop through the second array and compare it to the object of the first by removing each corresponding element. This allows us to compare not only the elements but the frequency of them. If the arrays are the same the resulting object should return to 0 for each element as the second loops through, removing them.
