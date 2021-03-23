@@ -43,3 +43,6 @@ function sumZero(arr) {
 }
 time complexity = O(n)
 space complexity = O(1)
+
+
+a reputation system that rates you on contracts honored. can be non-financial so different than credit score.
