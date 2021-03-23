@@ -1,0 +1,25 @@
+let anagram = (str1, str2) => {
+
+    if (str1.length !== str2.length) {
+        return false
+    }
+
+    let frequencyCounter1 = {}
+
+    for (let i = 0; i < str1.length; i++) {
+        let char = str1[i]
+        frequencyCounter1[char] ? frequencyCounter1[char] += 1 : frequencyCounter1[char] = 1;
+    }
+
+    for (let i = 0; i < str2.length; i++) {
+        let char = str2[i]
+        if(!frequencyCounter1[char]) {
+            return false
+        }
+        else {
+            frequencyCounter1[char] -=1
+        }
+    }
+    
+    return true;
+}
