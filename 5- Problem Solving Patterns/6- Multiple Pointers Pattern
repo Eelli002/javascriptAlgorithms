@@ -1,0 +1,45 @@
+Multiple Pointers
+    - Creating pointers or values that correspond to an index or position and move towards the beginning, end, or middle based on a certain condition.
+    - Very efficient for solving problems with minimal space complexity as well.
+
+An example:
+Write a function called sumZero wich accepts a sorted array of integers. The function should find the first pair where the sum is 0. Return an array that includes both values that sum to zero or undefined if a pair does not exist.
+    - In order for multiple pointers to work, the array or string must be sorted.
+
+
+create two pointers or variables at a set point in an array and adjust either of them based on a condition.
+
+Naive Solution:
+function sumZero(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        for (let j = i+1; j < arr.length; j++) {
+            if(arr[i] + arr[j] === 0) {
+                return [arr[i], arr[j]];
+            }
+        }
+    }
+}
+
+example: [-4, -3, -2, -1, 0, 1, 2, 5] looking for a pair that adds up to zero
+// set pointers at -4 and 5.
+// since -4 + 5 = 1, it is larger than zero so we keep the -4 pointer and move the 5 pointer to the left.
+// since -4 + 2 = -2, it is smaller than zero so we move the -4 pointer to the right and keep the 2 pointer.
+// since -3 + 2 = -1, it is still too small so we move the -3 pointer to the right again and keep the 2 pointer.
+// since -2 + 2 = 0, we have found our solution.
+
+function sumZero(arr) {
+    let left = 0;
+    let right = arr.length - 1;
+    while(left < right) {
+        let sum = arr[left] + arr[right];
+        if(sum === 0) {
+            return [arr[left], arr[right]];
+        } else if (sum > 0) {
+            right--;
+        } else {
+            left++;
+        }
+    }
+}
+time complexity = O(n)
+space complexity = O(1)
