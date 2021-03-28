@@ -1,0 +1,95 @@
+Sliding Window Pattern 
+    - This patten involves creating a window which can wither be an attay or number from one position to another
+    - Depending on a certain condition, the window either increases or closes (and a new window is created)
+    - Very useful for keeping track of a subset of data in an array/string ect.
+
+An example
+Write a function called maxSubarrySum which accepts an array of integers and a number called n. The function should calculate the maximum sum of n consecutive elements in the array.
+
+maxSubarrySum([1,2,5,2,8,1,5], 2) // 10
+maxSubarrySum([1,2,5,2,8,1,5], 4) // 17
+maxSubarrySum([4,2,1,6], 1) // 6
+maxSubarrySum([], 4) // null
+
+Naive Solution
+function maxSubarrySum(arr, num) {
+    if (num > arr.length) {
+        return null;
+    }
+    let max = -Infinity;
+    for (let i = 0; i < arr.length - num + 1; i++) {
+        temp = 0;
+        for (let j = 0; j < num; j++) {
+            temp += arr[i + j];
+        }
+        if (temp > max) {
+            max = temp;
+        }
+    }
+    return max;
+}
+
+Instead of setting max to the sum of the first three digits and then taking the sum of the next three and comparing them. We can simply remove the first of the three and add the next one. So instead of taking [0 - 2] and comparing [1 - 3] we can remove [0] and add [3]. This is like a sliding window as it shift through the array. this is better as we can avoid nested loops again and reduce time complexity from       o(n^2) to o(n).
+
+Refactored Solution
+function maxSubarrySum(arr, num) {
+    let maxSum = 0;
+    let tempSum = 0;
+    if (arr.length < num) return null;
+    for (let i = 0; i < num; i++) {
+        maxSum += arr[i];
+    }
+    tempSum = maxSum;
+    for (let i = num; i < arr.length; i++) {
+        tempSum = tempSum - arr[i - num] + arr[i];
+        maxSum = Math.max(maxSum, tempSum);
+    }
+    return maxSum;
+}
+
+maxSubarrySum( [2,6,9,2,1,8,5,6,3], 3 )
+
+WALKTHROUGH:
+function maxSubarrySum(arr, num) {
+    let maxSum = 0;
+    let tempSum = 0;
+
+    // for edge cases
+    if (arr.length < num) return null;
+
+    // takes the sum of the first three numbers by starting at index [0] and looping until it hits [2]. Adding those numbers together with +=
+    for (let i = 0; i < num; i++) {
+        maxSum += arr[i];
+    }
+    // This sets maxSum = to 17
+
+    // sets tempSum equal to the previous maxSum
+    tempSum = maxSum;
+    // So maxSum = 17 and tempSum = 17
+
+    //i = 3; i < 9; i++
+    for (let i = num; i < arr.length; i++) {
+        tempSum = tempSum - arr[i - num] + arr[i];
+
+        // First Iteration:
+        // tempSum = 17 - arr[3 - 3] + arr[3]
+        // tempSum = 17 - 2 + 2
+        // tempSum = 17
+
+        // Second Iteration:
+        // i = 4; i < 9; i++
+        // tempSum = 17 - arr[4 - 3] + arr[4]
+        // tempSum = 17 - 6 + 1
+        // tempSum = 12
+
+        maxSum = Math.max(maxSum, tempSum);
+        // First Iteration: 
+        // maxSum = Math.max(17, 17)
+        // maxSum = 17
+
+        // Second Iteration:
+        // maxSum = Math.max(17, 12)
+        // maxSum = 17
+    }
+    return maxSum;
+}
