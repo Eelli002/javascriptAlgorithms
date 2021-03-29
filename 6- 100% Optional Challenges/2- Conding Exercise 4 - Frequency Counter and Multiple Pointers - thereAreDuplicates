@@ -1,0 +1,36 @@
+Frequency Counter / Multiple Pointers - areThereDuplicates
+Implement a function called, areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the argyments passed in. You can solve this using the frequency Counter pattern or the multiple pointers pattern.
+
+Examples:
+areThereDuplicates(1,2,3) // false
+areThereDuplicates(1,2,2) // true
+areThereDuplicates('a', 'b', 'c', 'a') // true
+
+Restrictions:
+Time: O(N)
+Space: O(N)
+Bonus:
+Time: O(N log N)
+Space: O(1)
+
+// Turn the arguements into an array
+// Create an object as a Counter
+// loop through the array, if the element is not in the object initialize it, else return true
+// return false
+
+function areThereDuplicates(arr) {
+    let arguementArray = []
+    arguementArray.push(arr)
+
+    if(arguementArray.length < 2) {
+        return false;
+    }
+
+    let counter = {}
+
+    for (let i = 0; i < arguementArray.length; i++) {
+        let dupe = arguementArray[i]
+        counter[dupe] ? true : counter[dupe] = 1  
+    }
+    return false;
+}
