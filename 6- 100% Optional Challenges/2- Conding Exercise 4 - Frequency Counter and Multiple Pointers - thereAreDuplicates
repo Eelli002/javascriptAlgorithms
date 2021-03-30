@@ -18,19 +18,17 @@ Space: O(1)
 // loop through the array, if the element is not in the object initialize it, else return true
 // return false
 
-function areThereDuplicates(arr) {
-    let arguementArray = []
-    arguementArray.push(arr)
-
-    if(arguementArray.length < 2) {
-        return false;
-    }
+function areThereDuplicates(...arr) {
 
     let counter = {}
 
-    for (let i = 0; i < arguementArray.length; i++) {
-        let dupe = arguementArray[i]
-        counter[dupe] ? true : counter[dupe] = 1  
+    for (let i = 0; i < arr.length; i++) {
+        let dupe = arr[i]
+        if (counter[dupe]) {
+            return true 
+        } else {
+            counter[dupe] = 1 
+        }
     }
     return false;
 }
