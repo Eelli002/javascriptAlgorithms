@@ -1,0 +1,13 @@
+Our Second Recursive Function
+function sumRange(num) {
+    if(num === 1) return 1;
+    return num + sumRange(num-1);
+}
+
+sumRange(3)
+    returns 3 + sumRange(2)
+        returns 2 + sumRange(1)
+            returns 1 // Base Case Reached so we can solve the previous invocations
+        returns 2 + 1
+    returns 3 + 6
+    returns 6;
