@@ -16,6 +16,41 @@ minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 95) // 0
 Time Complexity - O(n)
 Space Complexity - O(1)
 
+
+// create variables that maintain the max value and the current max value
+([2, 3, 1, 2, 4, 3], 7)
+
+[2, 3, 1, 2, 4, 3] // start the variables at 0, if not greater than or equal to int move var u summing the previous values
+ i
+
+[2, 3, 1, 2, 4, 3] // i = 5 now so keep moving up
+    i
+
+[2, 3, 1, 2, 4, 3] // this is our new tempValue, 4
+          i
+
+
 function minSubArrayLen(arr, int) {
+    let maxValue = 0;
+    let tempValue = 0;
+
+    for (let a = 0; a < arr.length; a++) {
+        maxValue += arr[a]
+    }
+
+    if (maxValue < int) {
+        return 0;
+    }
+
+    maxValue = 0;
+
+    while (i <= arr.length - 1 && j <= arr.length - 1) {
+        if(arr[i] < int) {
+            j++;
+        }
+        else if (arr[i] + arr[j] >= int) {
+            
+        }
+    }
     
 }

@@ -1,0 +1,12 @@
+What is Recursion?
+    A PROCESS (a function in our case) that CALLS ITSELF.
+
+It's EVERYWHERE
+    - JSON.parse / JSON.stringify
+    - document.getElementById and DOM traversal algorithms
+    - Object traversal
+    - We will see it with more complex data structures
+    - It's sometimes a cleaner alternative to iteration
+
+
+

@@ -1,0 +1,33 @@
+Martin has an array of numbers and wants to know if the items are even or odd.
+[1288, 1982, 2386, 2038]
+
+He goes to a magical dragon to ask if they are even or odd but the dragon will only tell him if the first number in the array is even or odd.
+
+So Martin asks him 'is the first number in [1288, 1982, 2386, 2038] even or odd?'
+
+The Dragon says even.
+
+So Martin asks ' is the first number in [1982, 2386, 2038] even or odd?'
+
+The Dragon replies even.
+
+So Martin asks ' is the first number in [2386, 2038] even or odd?'
+
+Dragon says even.
+
+So Martin asks ' is the first number in [2038] even or odd?'
+
+Dragon says even.
+
+So Martin asks ' is the first number in [] even or odd?'
+
+Dragon replies there is no number in the array. But I see you know about recursion.
+------------------------------------------------------------------------------------------
+
+Recursion is taking one problem and doing it over and over on a smaller piece or a changing piece until you hit some end point called the base case.
+
+Objectives
+    - Define what recursion is and how it can be used.
+    - Understand the two essential components of a recursive function.
+    - Visualize the call stack to better debug and understand recursive functions.
+    - Use helper method recursion and pur recursion to solve more difficult problems.
