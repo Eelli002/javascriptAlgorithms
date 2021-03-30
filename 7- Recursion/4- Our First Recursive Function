@@ -1,0 +1,31 @@
+How recursive functions work?
+    - Invoke the SAME function with a different input until you reach your base case!
+
+Base Case
+    - The condition when the recursion ends.
+    - This is the most important concept to understand
+    - If you do not have a base case to your recursive function you get stuck in an infinite loop
+
+Two Essential parts of a recursive function!
+    - Base Case
+    - Different input, the new input that the function calls to solve the previous one.
+
+Our First Recursive function
+
+function countDown(num) {
+    if (num <= 0) {
+        console.log('All Done!)
+        return;
+    }
+    console.log(num);
+    num--;
+    countDown(num);
+}
+
+Same Function Iteratively:
+function countDown(num) {
+    for (let i = num; i > 0; i--) {
+        console.log(i)
+    }
+    console.log('All Done!')
+}
