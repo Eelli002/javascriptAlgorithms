@@ -1,1 +1,31 @@
 Pure Recursion
+
+function collectOddValues(arr) {
+    let newArr = [];
+    if(arr.length === 0) {
+        return newArr;
+    }
+    if (arr[0] % 2 !== 0) {
+        newArr.push(arr[0])
+    }
+    newArr = newArr.concat(collectOddValues(arr.slice(1)));
+    return newArr;
+}
+
+// We define the var newArr with each iteration. Even though the data in it is lost at the start of the function, we get around this by using concat to 
+// Since we are not using a loop, there is no way for the function to know which index to target. We slice out the item at the [0] so that the function knows which to target. A sort of psuedo-loop.
+
+result
+collectOddValues([1,2,3,4,5])
+[1].concat(collectOddValues([2,3,4,5]))
+            [].concat(collectOddValues([3,4,5]))
+                        [3].concat(collectOddValues([4,5]))
+                                    [].concat(collectOddValues([5]))
+                                                [5].concat([])     // here we hit our base case because we said that if arr.length === 0; return newArr
+                                                [5]
+                                    [].concat([5])
+                        [3].concat([5])
+            [].concat([3,5])
+[1].concat([3,5])
+return
+[1,3,5]
