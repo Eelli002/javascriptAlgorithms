@@ -1,0 +1,34 @@
+How do we search?
+    - Given an array, the simplest way to search for a value is to look at every element in the array and check if it's the value we want.
+
+JavaScript has search!
+    - There are many different search methods on arrays in JavaScript:
+        - indexOf
+        - includes
+        - find
+        - findIndex
+    But how do these functions work?
+        - They use linear search to check every element one at a time to check if it exists.
+
+Example:
+usernames['tommy', 'monkeygurl', 'dinesh123', 'dinesh1234', 'patrick33', 'cats4lyfe', 'timothy', 'tom', 'tommy1', 'tomm_y', 'tom_my', 'i_hate_cats', 'pickle_luvr', 'pickle_hater', 'dog_guy', 'q', 'juan987']
+
+usernames.indexOf('tommy') // 0
+usernames.indexOf('q') // 15
+usernames.indexOf('asd') // -1
+usernames.includes('tom') // true
+usernames.includes('toms') // false
+
+
+Linear Search Pseudocode
+    - This function accepts an array and a value
+    - loop through the array and check if the vurrent array element is equal to the value
+    - If it is, return the index at which the element is found
+    - If the value is never found, return -1
+
+    function linearSearch (arr, value) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === value) return i;
+            else return -1;
+        }
+    }
