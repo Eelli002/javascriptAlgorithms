@@ -1,0 +1,39 @@
+Naive String Search
+    - Suppose you want to count the number of times a smaller string appears in a longer string
+    - A straightforward approach involves checking pairs of chcaracters individually
+
+Naive String Search
+Long String:            Short String:
+wowomgzomg              omg
+
+wowomgzomg
+omg
+
+wowomgzomg
+ omg
+
+wowomgzomg
+   omg // here we found our first match but we can keep searching
+
+wowomgzomg
+       omg // here we found our second match and have reached the end of the longer string.
+// We found two in total
+
+Pseudocode
+    - Create a function that takes two strings
+    - Loop over the shorter string
+    - If the characters don't match, break out of the inner loop
+    - If the characters do match, keep going
+    - If you complete the inner loop and find a match, increment the count of matches
+    - Return the count
+
+function stringSearch(strLong, strShort) {
+    let sum = 0;
+    for (let i = 0; i < strLong.length; i++) {
+        for (let j = 0; j < strShort.length; j++) {
+            if (strShort[j] !== strLong[i + j]) break;
+            if (j === strShort.length - 1) sum++;
+        }
+    }
+    return sum;
+}

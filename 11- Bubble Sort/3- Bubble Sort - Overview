@@ -1,0 +1,43 @@
+BubbleSort
+    - A sorting algorithm where the largest values bubble up to the top!
+
+[5, 3, 4, 1, 2]
+ ^  ^ Swap them bc 5 is larger than 3
+[3, 5, 4, 1, 2]
+    ^  ^ Swap them again bc 5 is larger than 4
+[3, 4, 5, 1, 2]
+       ^  ^ Swap bc 5 > 1
+[3, 4, 1, 5, 2]
+          ^  ^ Swap bc 5 > 2
+[3, 4, 1, 2, 5]
+             ^ 5 is now at the top of the list bc it is the largest.
+// We sort the array again but this time we only have 4 items to sort through becasue 5 is already at its correct position.
+[3, 4, 1, 2, 5]
+ ^  ^ We don't swap because 3 < 4
+[3, 4, 1, 2, 5]
+    ^  ^ Swap
+[3, 1, 4, 2, 5]
+       ^  ^ swap
+[3, 1, 2, 4, 5]
+// 4 is now at its correct position because we reduced the length of the array
+// We repeat this process until array is completely sorted
+
+Before we sort, we must swap!
+    - Many sorting algorithms involve some type of swapping functionality (e.g. swapping two numbers to put them in order)
+// ES5
+function swap(arr, inx1, inx2) {
+    var temp = arr[idx1];
+    arr[idx1] = arr[idx2];
+    arr[idx2] = temp;
+}; // This is more readable than ES6 but results in more lines of code.
+
+// ES6 / ES2015
+const swap = (arr, idx1, idx2) => {
+    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+}
+
+BubbleSort PseudoCode
+    - Start looping from with a variable called i at the end of the array towards the beginning
+    - Start an inner loop with a variable called j from the beginning until i-1
+    - If arr[j] is greater than arr[j+1], swap those two values!
+    - Return the sorted array
