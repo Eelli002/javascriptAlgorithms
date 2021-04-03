@@ -1,0 +1,23 @@
+Insertion Sort
+Builds up the sort by gradually creating a larger left half which is always sorted
+
+[5, 3, 4, 1, 2]
+ ^  ^ // Start at the second element (3) and compare it with the first element, if smaller swap.
+
+[3, 5, 4, 1, 2]
+    ^  ^ // Move up and compare again
+
+[3, 4, 5, 1, 2]
+       ^  ^ // Again if smaller swap, but with this algo keep swapping until the element you are comparing is smaller than the one to the left of it.
+// In this case 1 wouldn't just swap with 5, but it would continue to compare until in the correct position. So swap again with 4 and once more with 3.
+
+[1, 3, 4, 5, 2]
+          ^  ^ // Repeat this until completely sorted
+        
+[1, 2, 3, 4, 5]
+
+Insertion Sort Psuedocode
+    - Start by picking the second element in the array
+    - Now compare the second element with the one before it and swap if necessary
+    - Continue to the next element and if it is in the incorrect order, iterate through the sorted portion (i.e. the left side) to place the element in the correct place
+    - Repeat until the array is sorted

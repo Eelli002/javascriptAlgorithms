@@ -1,0 +1,18 @@
+Big O of Sorting algorithms:
+
+   algorithm   | Time Complexity (best) | Time Complexity (average) | Time Complexity (worst) | Space Complexity
+_________________________________________________________________________________________________________________
+Bubble Sort    |          O(n)          |            O(n^2)         |          O(n^2)         |       O(1) 
+Insertion Sort |          O(n)          |            O(n^2)         |          O(n^2)         |       O(1) 
+Selection Sort |          O(n^2)        |            O(n^2)         |          O(n^2)         |       O(1)  
+
+When data is nearly sorted, bubble sort works best and is the fastest. Selection is the worst.
+
+Insertion Sort is best when new data is coming in.
+
+Recap:
+    - Sorting is fundamental!
+    - Bubble sort, selection sort, and insertion sort are all roughly equivalent
+    - All have average time complexities that are quadratic
+    - We can do better... but we need more complex algorithms.
+    - Quadratic sorts work better on smaller data sets.
