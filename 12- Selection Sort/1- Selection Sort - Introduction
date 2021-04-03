@@ -1,0 +1,35 @@
+Selection sort
+    - Similar to bubble sort, but instead of first placing large values into sorted position, it plaves small values into sorted position.
+
+First we mark index [0] as our position for the smallest number
+[5, 3, 4, 1, 2]
+ ^  ^ // Here we mark 3 as our temporary smallest number to replace with index[0]
+
+[5, 3, 4, 1, 2]
+ ^     ^ // 4 is > than 3 so we move on
+
+[5, 3, 4, 1, 2]
+ ^        ^ // We hit a number than is < than our temporary smallest (3) and mark it to be swapped with index[0]
+
+[5, 3, 4, 1, 2]
+ ^           ^ // We finally hit the last number in the array and see that it is > than our temp smallest (1) so we do not change the temp value (1).
+
+[1, 3, 4, 5, 2]
+// We now move the swapping position of the next number up or else we will forever be stuck with 1 as smallest and never alter afterwards.
+
+[1, 3, 4, 5, 2]
+    ^  ^ // 3 is < than 4 so move on
+
+[1, 3, 4, 5, 2]
+    ^        ^ // here we hit both the end of the array and the smallest number so we swap index[1] with the index of the new smallest number
+
+[1, 2, 4, 5, 3] // We repeat this until our first loop completes.
+
+We can reuse the swap code from the bubble sort function.
+
+Selection Sort PseudoCode
+    - Store the first element as the smallest value you've seen so far.
+    - Compare this item to the next item in the array until you find a smaller number
+    - If a smaller number is found, designate that smaller number to be the new 'minimum' and continue until the end of the array.
+    - If the 'minimum' is not the value (index) you intially began with, swap the two values.
+    - Repeat this with the next element until the array is sorted.

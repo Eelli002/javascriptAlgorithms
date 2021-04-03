@@ -1,0 +1,21 @@
+If we have a nearly sorted array, once the elements that are out of order are put in the correct place the sort will continue to run, checking to see if there are more to arrange. This can waste a lot of time if we have a big array and the elements are already corrected.
+To fix this we can add a breakpoint in the function so that if there were no swaps in the previous iteration the loop will stop.
+
+Optimized with noSwaps
+
+function bubbleSort(arr) {
+    var noSwaps;
+    for (let i = arr.length; i > 0; i--) {
+        noSwaps = true;
+        for (let j = 0; j < i - 1; j++) {
+            if (arr[j] > arr[j+1]){
+                var temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                noSwaps = false;
+            }
+        }
+        if (noSwaps) break;
+    }
+    return arr;
+}
