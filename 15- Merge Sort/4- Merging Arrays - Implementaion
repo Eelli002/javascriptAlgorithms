@@ -1,0 +1,27 @@
+Merging Arrays Implementation
+
+function merge(arr1, arr2) {
+    let results = [];
+    let arr1Pointer = 0;
+    let arr2Pointer = 0;
+    while(arr1Pointer < arr1.length && arr2pointer < arr2.length) {
+        if (arr2[arr2Pointer] > arr1[arr1Pointer]) {
+            results.push(arr1[arr1Pointer]);
+            arr1Pointer++;
+        }
+        else {
+            results.push(arr1[arr2Pointer]);
+            arr2Pointer++;
+        }
+    }
+    // The following while loops are in the case that we reached the end of one of the two arrays and still have some data in the other. This will push the rest of the data from the longer array.
+    while (arr1Pointer < arr1.length) {
+        results.push(arr1[arr1Pointer]);
+        arr1Pointer++;
+    }
+    while (arr2Pointer < arr2.length) {
+        results.push(arr2[arr2Pointer]);
+        arr2Pointer++;
+    }
+    return results;
+}

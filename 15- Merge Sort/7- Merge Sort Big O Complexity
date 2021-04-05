@@ -1,0 +1,6 @@
+Big O of mergeSort
+Time Complexity (best), Time Complexity (average), Time Complexity (worst) : O(n log n)
+Space Complexity: O(n)
+
+- Splitting the arrays (decomposition) is O(log n)
+- O(n) comparisons per decomposition

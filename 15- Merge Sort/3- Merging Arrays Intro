@@ -1,0 +1,31 @@
+Merging Arrays
+    - In order to implement merge sort, it's useful to first implement a function responsible for merging two sorted Arrays
+    - Given two arrays which are sorted, this helper function should create a new array which is also sorted, and consists of all of the elements in the two input arrays
+    - This function should run in O(n + m) time and O(n + m) space and should not modify the parameters passed to it.
+
+Merging Arrays Pseudocode
+    - Create an empty array, take a look at the smallest values in each input array
+    - While there are still values we haven't looked at...
+        - If the value in the first array is smaller than the value in the second array, push the value in the first array into our results and move on to the next value in the first array.
+        - If the value in the first array is larger than the value in the second array, push the value in the second array into our results and move on to the next value in the second array
+        - Once we exhaust one array, push in all remaining values from the other array.
+
+Example:
+merge([1, 10, 50], [2, 14, 99, 100])
+ _            _  // here we start both arrays at their [0] position and begin sorting
+[1, 10, 50]  [2, 14, 99, 100]
+[1] // 1 < 2 so we push 1 into our results array and move the pointer up in the first array:
+    __        _
+[1, 10, 50]  [2, 14, 99, 100] // Now we compare arr1[1] with arr2[0] and push the smaller into results
+[1, 2] 
+    __           __
+[1, 10, 50]  [2, 14, 99, 100] // We moved the pointer up in arr2 because 2 was < 10 and continue to compare
+[1, 2, 10]
+        __       __
+[1, 10, 50]  [2, 14, 99, 100]
+[1, 2, 10, 14]
+        __           __
+[1, 10, 50]  [2, 14, 99, 100]
+[1, 2, 10, 14, 50] // Here we have finished looping through the first array but we still have 2 elements in arr2. Because both arrays are already sorted we push in the remaining elements
+
+[1, 2, 10, 14, 50, 99, 100] // We have finished merging!

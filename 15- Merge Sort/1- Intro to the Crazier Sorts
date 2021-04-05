@@ -1,0 +1,10 @@
+Intermediate Sorting Algorithms
+
+Why Learn This?
+    - The sorting Algorithms we've learned so fat don't scale well
+    - Try out bubble sort on an array of 100,000 elements, it will take some time!
+
+Faster Sorts
+    - There is a family of sorting algorithms that can improve time complexity from O(n^2) to O(n log n)
+    - There's a tradeoff between efficiency and simplicity
+    - The more efficient algorithms are much less simple, and generally take longer to understand

@@ -1,0 +1,47 @@
+function merge(arr1, arr2) {
+    let results = [];
+    let arr1Pointer = 0;
+    let arr2Pointer = 0;
+    while(arr1Pointer < arr1.length && arr2pointer < arr2.length) {
+        if (arr2[arr2Pointer] > arr1[arr1Pointer]) {
+            results.push(arr1[arr1Pointer]);
+            arr1Pointer++;
+        }
+        else {
+            results.push(arr1[arr2Pointer]);
+            arr2Pointer++;
+        }
+    }
+    // The following while loops are in the case that we reached the end of one of the two arrays and still have some data in the other. This will push the rest of the data from the longer array.
+    while (arr1Pointer < arr1.length) {
+        results.push(arr1[arr1Pointer]);
+        arr1Pointer++;
+    }
+    while (arr2Pointer < arr2.length) {
+        results.push(arr2[arr2Pointer]);
+        arr2Pointer++;
+    }
+    return results;
+}
+
+function mergeSort(arr) {
+    if (arr.length <= 1) return arr;
+    let mid = Math.floor(arr.length / 2);
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+    return merge(left, right);
+}
+
+mergeSort([10, 24, 76, 73])
+mergeSort([10, 24])
+mergeSort([10])  mergeSort([24])
+returns [10] as left
+returns [24] as right
+// call merge on left and right to return [10, 24]
+// Now start on the right side
+mergeSort([76, 73])
+mergeSort([76])  mergeSort([73])
+returns [76] as left and [73] as right
+merge them to get [73, 76]
+merge again to get [10, 24, 73, 76]
+[10, 24, 73, 76] is returned.
