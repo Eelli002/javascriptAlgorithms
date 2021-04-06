@@ -1,0 +1,59 @@
+Comparison Sorts
+Average Time Complexity:
+    - Bubble Sort: O(n^2)
+    - Insertion Sort: O(n^2)
+    - Selection Sort: O(n^2)
+    - Quick Sort: O(n log n)
+    - Merge Sort: O(n log n)
+
+Can We Do Better?
+Yes! But not by making comparisons
+
+Radix Sort
+    - Radix sort is a special sorting algorithm that works on lists of numbers
+    - It never makes comparisons between elements!
+    - It exploits the fact that information about the size of a number is encoded in the number of digits
+    - More digits means a bigger number!
+
+How Does it Work?
+// it begins by looking at the last digit of an integer and splitting the array up into buckets containing the same right-most integer:
+[1556, 4, 3556, 593, 408, 4386, 902, 7, 8157, 86, 9637, 29]
+    ^  ^     ^    ^    ^     ^    ^  ^     ^   ^     ^   ^
+|    |    |    |    |    |    |86  |    |    |    |
+|    |    |    |    |    |    |4386|9637|    |    |
+|    |    |    |    |    |    |3556|8157|    |    |
+|    |    |902 |593 |4   |    |1556|7   |408 |29  |
+ 0    1    2    3    4    5    6    7    8    9
+
+// We now create a new array with these integers sorted:
+// We repeat this process, moving the sort one digit to the left:
+[902, 593, 4, 1556, 3556, 4386, 86, 7, 8157, 9637, 408, 29]
+  ^    ^  ^     ^     ^     ^   ^  ^     ^     ^    ^   ^
+|408 |    |    |    |    |    |    |    |    |    |
+|7   |    |    |    |    |8157|    |    |    |    |
+|4   |    |    |    |    |3556|    |    |86  |    |
+|902 |    |29  |9637|    |1556|    |    |4386|593 |
+ 0    1    2    3    4    5    6    7    8    9
+
+Resulting in this new array:
+[902, 4, 7, 408, 29, 9637, 1556, 3556, 8157, 4386, 86, 593]
+ ^   ^  ^   ^   ^     ^     ^     ^     ^     ^   ^    ^ // We continue to move the sort one digit to the left
+|86  |    |    |    |    |    |    |    |    |    |
+|29  |    |    |    |    |593 |    |    |    |    |
+|7   |    |    |    |    |3556|    |    |    |    |
+|4   |8157|    |4386|408 |1556|9637|    |    |902 |
+ 0    1    2    3    4    5    6    7    8    9
+
+[4, 7, 29, 86, 8157, 4386, 408, 1556, 3556, 593, 9637, 902]
+^  ^  ^   ^    ^     ^    ^     ^     ^    ^     ^    ^
+|902 |    |    |    |    |    |    |    |    |    |
+|593 |    |    |    |    |    |    |    |    |    |
+|408 |    |    |    |    |    |    |    |    |    |
+|86  |    |    |    |    |    |    |    |    |    |
+|29  |    |    |    |    |    |    |    |    |    |
+|7   |    |    |    |    |    |    |    |    |    |
+|4   |1556|    |3556|4386|    |    |    |8157|9637|
+ 0    1    2    3    4    5    6    7    8    9
+
+This results in our final sorted array:
+[4, 7, 29, 86, 408, 593, 902, 1556, 3556, 4386, 8157, 9637]
