@@ -1,0 +1,5 @@
+Big O of Quicksort
+Time Complexity Best: O(n log n)
+Time Complexity Average: O(n log n)
+Time Complexity Worst: O(n^2)
+Space Complexity: O(log n)
