@@ -1,0 +1,18 @@
+Data Structures Introduction
+
+What Do They Do?
+    - Data structures are collections of values, the relationships among them, and the functions or operations that can be applied to the data.
+
+Why So Many?
+    - Different data structures excel at different things. Some are highly specialozed, while others (like arrays) are more generally used.
+
+Why Care?
+    - The more time you spend as a developer, the more likely you'll need to use one of these data structures.
+    - You've already worked with many of them unkowingly!
+    - And of course.. Interviews
+
+There is no one 'BEST' data structure, they all excel in different situations...
+    - Working with map/location data? Use a graph!
+    - Need an ordered list with fast inserts/removals at the beginning and end? Use a linked list!
+    - Web scraping nested HTML? Use a tree!
+    - Need to write a scheduler? Use a binary heap!

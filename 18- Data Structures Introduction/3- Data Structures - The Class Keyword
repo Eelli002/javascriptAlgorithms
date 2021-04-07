@@ -1,0 +1,34 @@
+The Class Keyword
+
+The Syntax
+
+class Student {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+
+    - The method to create new objects must be called constructor
+    - The class keyword creates a constant, so you can not redefune it. Watch out for the syntax as well!
+
+Creating Objects from classes 
+    - We use the 'new' keyword
+
+class Student {
+    constructor(firstName, lastName, year) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.grade = year;
+    }
+}
+let firstStudent = new Student('Colt', 'Steele', 4);
+let secondStudent = new Student('Blue', 'Steele', 2);
+
+results in:
+
+firstStudent {
+    firstName: 'Colt',
+    lastName: 'Steele', 
+    grade: 4
+}
