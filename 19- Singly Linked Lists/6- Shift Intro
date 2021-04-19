@@ -1,0 +1,8 @@
+Shifting - Removing a new node from the beginning of the Linked List!
+
+Shifting psuedocode
+    - If there are no nodes, return undefined
+    - Store the cureent head property in a variable
+    - Set the head property to be the current head's next property
+    - Decrement the length by 1
+    - Return the value of the node removed
